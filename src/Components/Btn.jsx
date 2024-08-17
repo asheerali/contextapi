@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { Context } from "../store/BtnContext";
 
 function Btn() {
-  const [signedIn, setSignedIn] = useContext(Context);
+  const signedInCtx = useContext(Context);
   return (
-    <button onClick={() => setSignedIn(!signedIn)}>
-      {signedIn ? "Signed In" : "Signed Out"}
+    <button onClick={signedInCtx.toggleSignedIn}>
+      {signedInCtx.signedIn ? "Signed In" : "Signed Out"}
     </button>
   );
 }

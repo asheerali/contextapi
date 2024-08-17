@@ -1,20 +1,16 @@
-import { useContext } from "react";
 import "./App.css";
 import Nav from "./Components/Nav";
-import BtnContextProvider, { Context } from "./store/BtnContext";
+import BtnContextProvider from "./store/BtnContext";
+import Body from "./Components/Body";
+
 
 function App() {
   return (
     <BtnContextProvider>
       <Nav />
-      <Status />
+      <Body/>
     </BtnContextProvider>
   );
-}
-
-function Status() {
-  const [signedIn] = useContext(Context);
-  return <h1>{signedIn ? "Signed In" : "Signed Out"}</h1>;
 }
 
 export default App;
